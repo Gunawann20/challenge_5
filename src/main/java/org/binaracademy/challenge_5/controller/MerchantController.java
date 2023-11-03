@@ -17,8 +17,12 @@ import java.util.List;
 @RestController
 public class MerchantController {
 
+    private final MerchantService merchantService;
+
     @Autowired
-    private MerchantService merchantService;
+    public MerchantController(MerchantService merchantService){
+        this.merchantService = merchantService;
+    }
 
     @Operation(summary = "Menambahkan merchant")
     @PostMapping(
